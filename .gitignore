@@ -1,10 +1,92 @@
+# 🚫 Ignore Files and Folders from Git tracking. <Last updated: 2025-06-09>
+# Docs    : https://git-scm.com/docs/gitignore   -- Git Iignore Reference
+# Examples: https://github.com/github/gitignore
+
+# ═════════════════════════════════════════════════════════╗
+#                          Common                          ║
+# ═════════════════════════════════════════════════════════╝
+
+# IDE specific files
 .idea/
 .vscode/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# AI / LLM tooling
+#   -> Comment out entries below to share configs with the team
+#   -> Use "<folder>/*" with "!<folder>/<file>" to share specific files only
 .claude/
+.cursor/
+.cursorrules
+.continuum/
+.idx/
 .gemini/
+
+# Local envionment overrides (dotenv-flow)
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Testing
+coverage/
+
+# Local workspace (personal notes, drafts, temporary files - not for version control)
 /local/
 *.local.*
-tmp/
-dist/
-logs/
+
+# ═════════════════════════════════════════════════════════╗
+#                    Node.js Environment                   ║
+# ═════════════════════════════════════════════════════════╝
+
+# NPM cache
+.npm/
+
+# Performant-NPM cache
+.pnpm-store/
+
+# Yarn cache
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Yarn zero-installs
+#   -> Docs: https://yarnpkg.com/features/zero-installs
+#   -> Swap the comments on the following lines if you wish to use zero-installs
+#!.yarn/cache
+.pnp.*
+.pnp/
+
+# Vite files
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
 node_modules/
+
+# Build outputs
+dist/
+build/
+
+# ═════════════════════════════════════════════════════════╗
+#                      Project Related                     ║
+# ═════════════════════════════════════════════════════════╝
+
+# Temp files (local cache, local sessions, temp uploads, etc.)
+tmp/
+
+# User-uploaded files
+uploads/
