@@ -1,0 +1,10 @@
+.idea/
+.vscode/
+.claude/
+.gemini/
+/local/
+*.local.*
+tmp/
+dist/
+logs/
+node_modules/

@@ -1,0 +1,15 @@
+{
+  "name": "km-express-template",
+  "scripts": {
+    "start": "node src/app",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.9.2"
+  }
+}
