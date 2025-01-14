@@ -1,15 +1,18 @@
 {
   "name": "km-express-template",
+  "version": "0.0.0",
   "scripts": {
-    "start": "node src/app",
+    "start": "node src/server",
     "build": "tsc"
   },
   "dependencies": {
-    "express": "^5.0.0"
+    "express": "^5.2.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.10.2",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
     "typescript": "^5.9.2"
-  }
+  },
+  "author": "KM",
+  "license": "MIT"
 }
