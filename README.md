@@ -35,7 +35,18 @@ used as a starting point for a new Express application.
 | Script              | Description                     |
 |---------------------|---------------------------------|
 | `yarn start`        | Start development server        |
-| `yarn build`        | Build application               |
+| `yarn predev`       | Prepare for development         |
 | `yarn prettier`     | Check code with Prettier rules  |
 | `yarn prettier:fix` | Format code with Prettier rules |
 | `yarn lint`         | Check code with Linter rules    |
+
+### Deployment
+
+| Script                  | Description                                 |
+|-------------------------|---------------------------------------------|
+| `yarn build`            | Build application                           |
+| `yarn prerun`           | Prepare and build application (DEV env)     |
+| `yarn server`           | Start server (DEV env)                      |
+| `yarn prerun:{APP_ENV}` | Prepare and build application for {APP_ENV} |
+| `yarn server:{APP_ENV}` | Start server for {APP_ENV}                  |
+
