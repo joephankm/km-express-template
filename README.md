@@ -19,6 +19,7 @@ used as a starting point for a new Express application.
 | Typescript    | `^5.7`  |
 | Express       | `^5.0`  |
 | Prettier      | `^3.4`  |
+| ESLint        | `^9.18` |
 
 
 ## Installation
@@ -37,3 +38,4 @@ used as a starting point for a new Express application.
 | `yarn build`        | Build application               |
 | `yarn prettier`     | Check code with Prettier rules  |
 | `yarn prettier:fix` | Format code with Prettier rules |
+| `yarn lint`         | Check code with Linter rules    |
