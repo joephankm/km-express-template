@@ -9,7 +9,8 @@
     "build": "tsc",
     "prettier": "prettier --check --debug-check './src/**/*.{ts,js}' './**/*.{mjs,json}'",
     "prettier:fix": "prettier --write './src/**/*.{ts,js}' './**/*.{mjs,json}'",
-    "lint": "yarn dlx eslint ./src && tsc --noEmit"
+    "lint": "yarn dlx eslint ./src && tsc --noEmit",
+    "postinstall": "node .husky/install.mjs"
   },
   "dependencies": {
     "express": "^5.0.1"
@@ -21,6 +22,7 @@
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "globals": "^15.14.0",
+    "husky": "^9.1.7",
     "prettier": "^3.4.2",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.20.0"
