@@ -117,3 +117,34 @@ husky init
 | File                                           | When          | Usage                 |
 |------------------------------------------------|---------------|-----------------------|
 | [`.husky/pre-commit`](../../.husky/pre-commit) | Before commit | Run linters and tests |
+
+--------
+
+## Lint Staged
+
+Lint Staged lets linters run only on staged git files, not the entire code base.
+
+### Install
+
+```
+# (TERMINAL)
+
+# Install Lint Staged
+yarn add -D lint-staged
+```
+
+### Config Files
+
+| File                                                     | Description                                |
+|----------------------------------------------------------|--------------------------------------------|
+| [`lint-staged.config.mjs`](../../lint-staged.config.mjs) | Config for Lint Staged tasks in ESM format |
+
+
+### Commands
+
+```
+# (TERMINAL)
+
+# Run lint-staged tasks
+yarn lint-staged
+```
