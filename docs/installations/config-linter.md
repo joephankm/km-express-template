@@ -91,3 +91,29 @@ yarn dlx eslint ./src --fix
 
 Fix ESLint is not recommended because it may lead to unexpected changes in the code. You should only run checking
 ESLint to find errors and fix the code manually.
+
+--------
+
+## Husky
+
+Husky is a tool to automatically lint your commit messages, code, and run tests upon committing or pushing.
+
+### Install
+
+Husky uses Git hooks (core.hooksPath) to run lint commands.
+
+```
+# (TERMINAL)
+
+# Install Husky
+yarn add -D husky
+
+# Init Husky
+husky init
+```
+
+### Hook Files
+
+| File                                           | When          | Usage                 |
+|------------------------------------------------|---------------|-----------------------|
+| [`.husky/pre-commit`](../../.husky/pre-commit) | Before commit | Run linters and tests |
