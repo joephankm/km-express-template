@@ -1,12 +1,14 @@
 import express from 'express';
 
+// CONSTANTS
+import env from 'constants/env';
+
 const app = express();
-const PORT = 3000;
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(PORT, () => {
-  console.info(`App listening on port ${PORT}`);
+app.listen(env.PORT, () => {
+  console.info(`App listening on port ${env.PORT}`);
 });
