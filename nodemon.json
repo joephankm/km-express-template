@@ -1,0 +1,8 @@
+{
+  "watch": ["src/**/*"],
+  "ext": "ts,json",
+  "ignore": ["*.test.js", "**/sessions/**"],
+  "execMap": {
+    "ts": "ts-node"
+  }
+}
