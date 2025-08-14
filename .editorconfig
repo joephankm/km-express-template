@@ -1,12 +1,44 @@
-# ⚙️ Configuration for Shared Editor Formatting Rules. <Last updated: 2025-01-13>
+# ⚙️ Configuration for Shared Editor Formatting Rules. <Last updated: 2025-07-04>
 # Docs: https://editorconfig.org/  -- EditorConfig Configuration
 
+# Stop the editor from looking for .editorconfig files in the parent directories
 root = true
 
 [*]
+# ═════════════════════════════════════════════╗
+#     NON-configurable Prettier Behaviors      ║
+# ═════════════════════════════════════════════╝
+
+# Use UTF-8 character encoding
 charset = utf-8
+
+# Ensure every file ends with a newline
 insert_final_newline = true
+
+# Remove trailing whitespace
+# Caveat: Prettier won’t trim trailing whitespace inside template strings, but your editor might
+trim_trailing_whitespace = true
+
+
+# ═════════════════════════════════════════════╗
+#       Configurable Prettier Behaviors        ║
+# ═════════════════════════════════════════════╝
+
+# Use Unix-style line endings
 end_of_line = lf
+
+# Use spaces for indentation
 indent_style = space
 indent_size = 2
+
+# Maximum line length
 max_line_length = 120
+
+
+# ═════════════════════════════════════════════╗
+#              File-specific Overrides         ║
+# ═════════════════════════════════════════════╝
+
+[Makefile]
+# Use tabs for Makefiles (required by make)
+indent_style = tab

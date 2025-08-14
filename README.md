@@ -42,11 +42,12 @@ List of the **core libraries and frameworks** used within the application to imp
 
 **Tools and utility libraries** that support project development and functionality.
 
-| Package     |                     Version                      |    Type     | Description                                                    | Links                                                                                                                               | Internal Guides                                         |
-|-------------|:------------------------------------------------:|:-----------:|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
-| **TS-Node** | [`^10.9`](https://www.npmjs.com/package/ts-node) |  _Runtime_  | Execute TypeScript files directly in Node.js                   | [Docs](https://typestrong.org/ts-node/docs/) - [Options](https://typestrong.org/ts-node/docs/options)                               | [TS-Node](docs/js-foundation/server/runtime/ts-node.md) |
-| **Nodemon** | [`^3.1`](https://www.npmjs.com/package/nodemon)  |  _Runtime_  | Auto-restart server on file changes                            | [Docs](https://github.com/remy/nodemon#nodemon) - [Config](https://github.com/remy/nodemon#config-files)                            | [Nodemon](docs/js-foundation/server/runtime/nodemon.md) |
-| **PM2**     | [_(global)_](https://www.npmjs.com/package/pm2)  | _PROD Tool_ | Process manager for running Node.js applications in production | [Docs](https://pm2.keymetrics.io/docs/usage/quick-start/) - [Config](https://pm2.keymetrics.io/docs/usage/application-declaration/) | [PM2](docs/js-foundation/server/runtime/pm2.md)         |
+| Package      |                     Version                      |    Type     | Description                                                    | Links                                                                                                                               | Internal Guides                                                      |
+|--------------|:------------------------------------------------:|:-----------:|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| **Prettier** | [`^3.8`](https://www.npmjs.com/package/prettier) | _Dev Tool_  | Opinionated code formatter                                     | [Docs](https://prettier.io/docs/en/) - [Options](https://prettier.io/docs/en/options.html)                                          | [Prettier](docs/js-foundation/development/quality-tools/prettier.md) |
+| **TS-Node**  | [`^10.9`](https://www.npmjs.com/package/ts-node) |  _Runtime_  | Execute TypeScript files directly in Node.js                   | [Docs](https://typestrong.org/ts-node/docs/) - [Options](https://typestrong.org/ts-node/docs/options)                               | [TS-Node](docs/js-foundation/server/runtime/ts-node.md)              |
+| **Nodemon**  | [`^3.1`](https://www.npmjs.com/package/nodemon)  |  _Runtime_  | Auto-restart server on file changes                            | [Docs](https://github.com/remy/nodemon#nodemon) - [Config](https://github.com/remy/nodemon#config-files)                            | [Nodemon](docs/js-foundation/server/runtime/nodemon.md)              |
+| **PM2**      | [_(global)_](https://www.npmjs.com/package/pm2)  | _PROD Tool_ | Process manager for running Node.js applications in production | [Docs](https://pm2.keymetrics.io/docs/usage/quick-start/) - [Config](https://pm2.keymetrics.io/docs/usage/application-declaration/) | [PM2](docs/js-foundation/server/runtime/pm2.md)                      |
 
 ------------
 
@@ -106,6 +107,10 @@ You can also verify the development environment by running:
 # Confirm no TypeScript or type-related issues
 pnpm typecheck
 # - ✅ Expected: (no error shown) -
+
+# Verify formatting does not modify any files
+pnpm format
+# - ✅ Expected: (no code changes) -
 ```
 
 ------------
@@ -121,6 +126,7 @@ Scripts used during development to run the application, maintain code quality, a
 |----------------------------|----------------------------------------------------------|:---------:|
 | `pnpm start`               | Start app in **DEV mode**                                |     ✓     |
 | `pnpm script <file>`       | Run a TypeScript script from [`scripts/<file>`](scripts) |     ✓     |
+| `pnpm format`              | Format code with **Prettier rules**                      |           |
 | `pnpm typecheck`           | Validate **TypeScript** types                            |           |
 
 
