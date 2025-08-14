@@ -33,6 +33,7 @@ Browse the following guides for common setup and usage instructions:
 
 1. Set up the **runtime environment** — 🤘 _Refer to the [Node and Package Manager guide](docs/common/general/setup/node-and-package-manager.md)_
 2. Initialize the **Express project** — 🤘 _Follow the [Create Express App guide](docs/common/express/setup/express-app.md#-create-express-app-)_
+3. Configure **Linters and Development Tools (Prettier, ESLint, etc.)** — 🤘 _See the [Code Quantity, Linting & Development Tools guide](docs/common/general/setup/linting-development-tools/-intro.md)_
 
 ------------
 
@@ -41,7 +42,8 @@ Browse the following guides for common setup and usage instructions:
 
 ### 🛠 Development Scripts
 
-| Script       | Description                      |
-|--------------|----------------------------------|
-| `pnpm start` | Start the **development server** |
-| `pnpm build` | Build application                |
+| Script        | Description                         |
+|---------------|-------------------------------------|
+| `pnpm start`  | Start the **development server**    |
+| `pnpm build`  | Build application                   |
+| `pnpm format` | Format code with **Prettier rules** |

@@ -6,7 +6,8 @@
   },
   "scripts": {
     "start": "node src/app",
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --write './**/*.{ts,js,cjs,mjs,json}'"
   },
   "dependencies": {
     "express": "^5.1.0"
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
+    "prettier": "^3.6.2",
     "typescript": "^5.9.2"
   }
 }

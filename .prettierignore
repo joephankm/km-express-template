@@ -1,0 +1,41 @@
+# 🚫 Ignore Files and Folders from Prettier formatting. <Last updated: 2025-07-04>
+# Docs: https://prettier.io/docs/ignore
+
+# Ignore artifacts
+dist
+build
+coverage
+
+# Ignore node modules
+node_modules
+
+# Ignore specific configuration files
+*.config.js
+
+# Ignore tsconfig (tsconfig.json contains comments)
+tsconfig.json
+
+# Ignore environment variables files
+.env
+.env.*
+
+# Ignore lock files
+yarn.lock
+package-lock.json
+
+# Ignore logs
+*.log
+
+# Ignore compiled files
+*.min.js
+*.min.css
+
+# Ignore specific file types
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# Ignore all HTML files
+**/*.html
