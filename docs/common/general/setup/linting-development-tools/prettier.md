@@ -1,6 +1,6 @@
 # ![Prettier](../../_assets/icons/prettier-28.png) Prettier
 
-<p align="right"><em>&lt;Last updated: 2025-07-04&gt;</em></p>
+<p align="right"><em>&lt;Last updated: 2025-10-06&gt;</em></p>
 
 **Prettier** is an opinionated code formatter that enforces a **consistent code style** by **automatically reprinting
 code** according to its **predefined formatting rules**.
@@ -19,7 +19,8 @@ code** according to its **predefined formatting rules**.
 
 ************
 
-[⤴️ Back: **Code Quality & Linting Tools**](-intro.md)
+[⤴️ Back: **Code Quality & Linting Tools**](-intro.md)\
+                                                            [Next: **ESLint** ▶️](eslint.md)
 
 ************
 
@@ -125,4 +126,5 @@ Prettier supports configuration through dedicated files to help maintain consist
 
 ************
 
-[⤴️ Back: **Code Quality & Linting Tools**](-intro.md)
+[⤴️ Back: **Code Quality & Linting Tools**](-intro.md)\
+                                                            [Next: **ESLint** ▶️](eslint.md)

@@ -21,6 +21,7 @@
 |---------------|:--------------------------------------------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Typescript    | [`^5.9`](https://www.npmjs.com/package/typescript) | [Docs](https://eslint.org/docs/latest/) - [Util Types](https://www.typescriptlang.org/docs/handbook/utility-types.html) - [Cheat Sheet](https://www.typescriptlang.org/cheatsheets/) |
 | Express       |  [`^5.1`](https://www.npmjs.com/package/express)   | [Learn](https://expressjs.com/en/starter/installing.html) - [API](https://expressjs.com/en/5x/api.html)                                                                              |
+| ESLint        |  [`^9.37`](https://www.npmjs.com/package/eslint)   | [Docs](https://eslint.org/docs/latest/) - [CLI](https://eslint.org/docs/latest/use/command-line-interface) - [TypeScript ESLint](https://typescript-eslint.io/getting-started/)      |
 
 ------------
 
@@ -42,8 +43,11 @@ Browse the following guides for common setup and usage instructions:
 
 ### 🛠 Development Scripts
 
-| Script        | Description                         |
-|---------------|-------------------------------------|
-| `pnpm start`  | Start the **development server**    |
-| `pnpm build`  | Build application                   |
-| `pnpm format` | Format code with **Prettier rules** |
+| Script           | Description                           |
+|------------------|---------------------------------------|
+| `pnpm start`     | Start the **development server**      |
+| `pnpm build`     | Build application                     |
+| `pnpm format`    | Format code with **Prettier rules**   |
+| `pnpm typecheck` | Validate **TypeScript** types         |
+| `pnpm lint:es`   | Check code with **ESLint rules**      |
+| `pnpm lint`      | Run both **ESLint** and **typecheck** |
