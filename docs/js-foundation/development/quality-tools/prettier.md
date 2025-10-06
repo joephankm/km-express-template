@@ -22,7 +22,8 @@ code** according to its **predefined formatting rules**.
 
 ************
 
-[⤴️ Back: **Code Quality & Linting Tools**](-intro.md)
+[⤴️ Back: **Code Quality & Linting Tools**](-intro.md)\
+                                                            [Next: **ESLint** ▶️](eslint.md)
 
 ************
 
@@ -279,3 +280,4 @@ Prettier supports configuration through dedicated files to help maintain consist
 ************
 
 [⤴️ Back: **Code Quality & Linting Tools**](-intro.md)
+                                                            [Next: **ESLint** ▶️](eslint.md)

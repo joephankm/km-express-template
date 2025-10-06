@@ -1,3 +1,4 @@
+/* eslint-disable no-console -- this file is for testing purpose only */
 import env from '#configs/env';
 
 console.log('Hello, World!');

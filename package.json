@@ -8,6 +8,8 @@
     "hello:script": "pnpm run script hello",
     "format": "prettier . --write",
     "typecheck": "tsc --noEmit",
+    "lint:es": "eslint .",
+    "lint": "concurrently --prefix=none 'pnpm run lint:es' 'pnpm run typecheck'",
     "build": "tsc && tsc-alias",
     "prerun": "pnpm install --frozen-lockfile && rm -rf dist && pnpm run build",
     "server": "pnpm run _env -- node dist/server",
@@ -23,19 +25,26 @@
     "node": ">=24.16.0"
   },
   "dependencies": {
+    "concurrently": "^9.2.1",
     "dotenv-cli": "^11.0.0",
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@tsconfig/node24": "^24.0.4",
     "@types/express": "^5.0.6",
     "@types/node": "^25.9.1",
+    "eslint": "^10.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-n": "^17.24.0",
+    "globals": "^17.6.0",
     "nodemon": "^3.1.14",
     "prettier": "^3.8.3",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.17",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.4"
   },
   "author": "KM",
   "license": "MIT"
