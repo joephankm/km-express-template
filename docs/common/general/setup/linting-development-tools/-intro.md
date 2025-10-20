@@ -1,6 +1,6 @@
 # Code Quality, Linting & Development Tools
 
-<p align="right"><em>&lt;Last updated: 2025-10-06&gt;</em></p>
+<p align="right"><em>&lt;Last updated: 2025-10-20&gt;</em></p>
 
 Maintaining a consistent codebase is critical for collaboration, readability, and long-term maintainability. This guide
 introduces the essential tools used to enforce **code style**, **automate formatting**, and **catch potential errors
@@ -45,6 +45,21 @@ A powerful linter for **identifying and fixing problems** in **JavaScript**/**Ty
   - Catch bugs, anti-patterns, and risky constructs early during development
   - Improve code readability and maintainability by enforcing structural consistency
   - Prevent common mistakes (e.g., unused variables, unreachable code, incorrect type usage)
+
+  </dd><dt>
+
+###  🐶 [Husky](husky.md)
+
+  </dt><dd>
+
+A **Git hook manager** that lets you **run scripts automatically before commits, pushes, or merges** — helping enforce
+code standards and prevent bad code from entering the repository.
+
+**Use Cases:**
+  -	Run formatting or testing tasks and validate commit messages automatically
+  -	Enforce code quality checks before commits (`pre-commit`) or pushes (`pre-push`)
+  -	Prevent code with errors or inconsistent styles from being committed
+  - Automate common Git workflows like installing dependencies or running setup scripts after pull or checkout
 
   </dd>
 </dl>

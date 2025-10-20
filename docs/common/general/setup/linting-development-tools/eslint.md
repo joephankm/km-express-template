@@ -28,7 +28,7 @@ share coding standards**, ensuring cleaner, more maintainable codebases.
 ************
 
 [⤴️ Back: **Code Quality & Linting Tools**](-intro.md)\
-[◀️ Previous: **Prettier**](prettier.md)
+[◀️ Previous: **Prettier**](prettier.md)                                        [Next: **Husky** ▶️](husky.md)
 
 ************
 
@@ -747,4 +747,4 @@ x = 'hello'; // -> ❌ TypeScript will error, even in .js file
 ************
 
 [⤴️ Back: **Code Quality & Linting Tools**](-intro.md)\
-[◀️ Previous: **Prettier**](prettier.md)
+[◀️ Previous: **Prettier**](prettier.md)                                        [Next: **Husky** ▶️](husky.md)

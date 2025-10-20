@@ -43,7 +43,7 @@ export default defineConfig(
   /**
    * Global ignore settings (default: `node_modules` and `.git`)
    */
-  globalIgnores(['**/build/**', '**/dist/**', 'public', '*.config.mjs'], 'Global Ignores'),
+  globalIgnores(['**/build/**', '**/dist/**', 'public', '*.config.mjs', '.husky'], 'Global Ignores'),
 
   {
     languageOptions: {
