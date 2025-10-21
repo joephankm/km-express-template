@@ -1,4 +1,4 @@
-# 🐶 Husky
+# 🐶 ![Prettier](../../_assets/icons/prettier-28.png) ![Prettier](../../_assets/icons/yarn-22.png) Husky
 
 <p align="right"><em>&lt;Last updated: 2025-10-20&gt;</em></p>
 
