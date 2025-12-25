@@ -21,3 +21,4 @@ Guides for using development tools and managing project tooling effectively:
 2. Explore **Compilers & Build Tools** — 🏗️ _Browse the [Compilers & Build Tools](js-foundation/environment/compilers/-intro.md) reference._
 3. Explore **Server Runtime** — ⚡️ _Browse the [Server Runtime](js-foundation/server/runtime/-intro.md) reference._
 4. Learn about **Code Quality & Linting Tools** — 🏗️ _Browse the [Code Quality & Linting Tools](js-foundation/development/quality-tools/-intro.md) reference._
+5. Discover **Git Workflow Tools** — 🔀 _Browse the [Git Workflow Tools](js-foundation/development/gitflow-tools/-intro.md) reference._
