@@ -9,6 +9,7 @@ Browse the following guides for common setup and usage instructions:
 
 1. Initialize the **Express project** — 🚀 _Follow the [Create Express App guide](backend/express/setup/express-app.md#-create-express-app-)._
 2. Setup **Node Environment** — 🌳 _Follow the [Environment Setup guide](js-foundation/environment/setup/-intro.md)._
+3. Setup **Code Quality Pipeline** — 🏗️ _Follow the [Code Quality Workflow guide](js-foundation/development/workflows/code-quality-workflow.md)._
 
 ------------
 

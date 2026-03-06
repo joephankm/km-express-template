@@ -81,7 +81,7 @@ const coreConfig = [
   }),
 
   // Global ignore settings (default: `node_modules` and `.git`)
-  globalIgnores(['*.config.mjs', '*.config.cjs'], 'Global Ignores'),
+  globalIgnores(['*.config.mjs', '*.config.cjs', '.husky'], 'Global Ignores'),
 
   // ESLint global variables
   {

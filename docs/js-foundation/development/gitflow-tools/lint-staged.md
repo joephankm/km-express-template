@@ -18,6 +18,7 @@ in Git**, just before a commit. It ensures that only the files you’re about to
 ************
 
 [⤴️ Back: **Code Quality & Linting Tools**](-intro.md)\
+[◀️ Previous: **Husky**](husky.md)
 
 ************
 
@@ -102,10 +103,12 @@ export default config;
 > **Pre-Commit phase** to verify staged changes before they are committed.
 >
 > In most setups, it is integrated with **Husky** and triggered by the `pre-commit` Git hook.
+>
+> 🤟 _See the [Husky Guide](husky.md) for how to configure and manage Git hooks._
 
 Add `lint-staged` command to your `pre-commit` hook:
 
-```sh
+```shell
 # (📍 /.husky/pre-commit)
 
 pnpx lint-staged
@@ -261,3 +264,4 @@ Common CLI options supported across `lint-staged` commands:
 ************
 
 [⤴️ Back: **Code Quality & Linting Tools**](-intro.md)\
+[◀️ Previous: **Husky**](husky.md)

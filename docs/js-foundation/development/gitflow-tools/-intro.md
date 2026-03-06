@@ -1,6 +1,6 @@
 # 🔀 Git Workflow Tools
 
-<p align="right"><em>&lt;Last updated: 2025-12-25&gt;</em></p>
+<p align="right"><em>&lt;Last updated: 2026-03-06&gt;</em></p>
 
 Tools that integrate with the Git workflow to automate checks, enforce code quality, and streamline development
 processes during commits, pushes, and other repository events.
@@ -19,6 +19,23 @@ By integrating these tools into your workflow, you can:
 
 
 <dl>
+  <dt>
+
+### 🐶 [Husky](husky.md)
+
+  </dt>
+  <dd>
+
+A **Git hook manager** that lets you **run scripts automatically before commits, pushes, or merges** — helping enforce
+code standards and prevent bad code from entering the repository.
+
+**Use Cases:**
+  - Run formatting or testing tasks and validate commit messages automatically.
+  - Enforce code quality checks before commits (`pre-commit`) or pushes (`pre-push`).
+  - Prevent code with errors or inconsistent styles from being committed.
+  - Automate common Git workflows like installing dependencies or running setup scripts after pull or checkout.
+
+  </dd>
   <dt>
 
 ### ![Lint-Staged](../_static/icons/lint-staged-16.png) [Lint-Staged](lint-staged.md)

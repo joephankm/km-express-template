@@ -24,3 +24,15 @@ Documentation for tools that automate Git workflows and enforce standards at com
 Overview: [🔀 Git Workflow Tools](gitflow-tools/-intro.md)
 
 - [![Lint-Staged](_static/icons/lint-staged-14.png) Lint-Staged — Run tasks on staged files](gitflow-tools/lint-staged.md)
+- [🐶 Husky — Git hooks manager](gitflow-tools/husky.md)
+
+------------
+
+
+## 🧰 Workflows
+
+Step-by-step guides for setting up automated development pipelines.
+
+Overview: [🧰 Development Workflows](workflows/-intro.md)
+
+- [🏗️ Code Quality Workflow — Automated code quality pipeline setup](workflows/code-quality-workflow.md)
