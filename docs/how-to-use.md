@@ -63,7 +63,79 @@ From this point on, all commits belong exclusively to your project.
 >
 > This can help clarify the initial scope of the project and makes the first commit more informative.
 
-### ⓷. 🔄 Update Dependency Versions
+
+### ⓷. 🧰 Update Node & Package Manager Versions
+
+It is recommended to use **latest versions** of **Node.js** and the **package manager** when starting a new project.
+Doing so helps ensure better compatibility with modern dependencies, improved performance, and long-term maintainability.
+
+##### ✅ <u>Update Node Version</u>
+
+**① Determine the Latest Version**
+
+Use NVM to check available versions:
+
+```shell
+nvm ls-remote --lts
+```
+
+Install and switch to the selected version:
+
+```shell
+nvm install <node-version>
+nvm use <node-version>
+```
+
+**①  Update Project Configuration**
+
+After selecting the Node version, update it in [`package.json`](../package.json):
+
+```json lines
+// (📍 /package.json)
+
+{
+  "engines": {
+    "node": "<node-version>"
+  }
+}
+
+// --- OR (PNPM runtime configuration) ---
+
+{
+  "engines": {
+    "runtime": {
+      "name": "node",
+      "version": "<node-version>",
+      "onFail": "download"
+    }
+  }
+}
+```
+
+Also update the version in [`.nvmrc`](../.nvmrc) file:
+
+```
+// (📍 /.nvmrc)
+
+<node-version>
+```
+
+##### ✅ <u>Update Package Manager</u>
+
+Update PNPM version using **Corepack** to the latest release:
+
+```shell
+corepack use pnpm@latest
+```
+
+If you prefer to switch to a different package manager (e.g., **Yarn** or **npm**), you can update it accordingly:
+
+```shell
+corepack use <package-manager>@latest
+```
+
+
+### ⓸. 🔄 Update Dependency Versions
 
 When starting a new project, it’s generally best to work with the **latest compatible versions** of dependencies.
 However, because this repository is a **template**, dependency versions may not always be updated immediately and can
@@ -153,7 +225,7 @@ pnpm up <package> [<another-package> ...]
 >   - 🚧 If the issue cannot be resolved safely, revert the change and **skip that dependency update**
 
 
-### ⓸. 🧹 Clean Up Template Artifacts
+### ⓹. 🧹 Clean Up Template Artifacts
 
 After cloning and initializing the project, some **defaults and examples are included** as starting points. The
 checklist below highlights the common areas to **review and clean up** so the project reflects your own application.
@@ -195,7 +267,7 @@ git commit --amend
 ```
 
 
-### ⓹. 🏁 Push to Git Repository
+### ⓺. 🏁 Push to Git Repository
 
 Once all initial setup steps are complete, you can push the project to a remote Git repository. If you have already
 created an **empty repository**, **follow the provider’s setup guide**. While the exact wording may differ between

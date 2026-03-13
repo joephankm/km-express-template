@@ -8,3 +8,13 @@
 Browse the following guides for common setup and usage instructions:
 
 1. Initialize the **Express project** — 🚀 _Follow the [Create Express App guide](backend/express/setup/express-app.md#-create-express-app-)._
+2. Setup **Node Environment** — 🌳 _Follow the [Environment Setup guide](js-foundation/environment/setup/-intro.md)._
+
+------------
+
+
+## 🧰 Tool Guides
+
+Guides for using development tools and managing project tooling effectively:
+
+1. Setup **Node Environment Foundation** — 🧱 _Follow the [Node Environment Foundation](js-foundation/environment/node-core/-intro.md)._
