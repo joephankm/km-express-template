@@ -13,7 +13,8 @@ This guide outlines multiple strategies to **validate or enforce the versions us
 
 ************
 
-[⤴️ Back: **Node Environment**](-intro.md)
+[⤴️ Back: **Node Environment**](-intro.md)\
+                                                        [Next: **Configure TypeScript Environment** ▶️](typescript-environment.md)
 
 ************
 
@@ -222,4 +223,5 @@ This is the **recommended** modern approach for managing package manager version
 
 ************
 
-[⤴️ Back: **Node Environment**](-intro.md)
+[⤴️ Back: **Node Environment**](-intro.md)\
+                                                        [Next: **Configure TypeScript Environment** ▶️](typescript-environment.md)

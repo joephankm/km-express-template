@@ -19,6 +19,17 @@ Overview: 🧱 [_Node Environment Foundation_](node-core/-intro.md)
 ------------
 
 
+## 🏗️ Build Tools
+
+Tools responsible for **transforming**, **bundling**, and **preparing source code** for execution or deployment.
+
+Overview: 🏗️ [_Compilers & Build Tools_](compilers/-intro.md)
+
+- 🛡️ [TSC — TypeScript Compiler](compilers/tsc.md)
+
+------------
+
+
 ## 🛠️ Setup
 
 Step-by-step guides for configuring the full development environment from scratch.
@@ -26,3 +37,15 @@ Step-by-step guides for configuring the full development environment from scratc
 Overview: 🌳 [_Environment Setup Guides_](setup/-intro.md)
 
 - 🧭 [Manage Node Runtime & Package Manager Versions](setup/node-package-manager-version.md)
+- ![TypeScript](_static/icons/typescript-14.png) [Configure TypeScript Environment](setup/typescript-environment.md)
+
+------------
+
+
+## 🧠 Fundamentals
+
+Core concepts behind how JavaScript organizes and executes code across different environments.
+
+Overview: 🌳 [_Environment Fundamentals_](fundamentals/-intro.md)
+
+- 🧩 [JavaScript Module Systems](fundamentals/module-systems.md)

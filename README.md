@@ -22,10 +22,11 @@
 
 **Runtime, language, and tooling** required to develop, build, and run the project.
 
-| Specification |                         Version                          | Description                             | Links                                                                                                                                                                                                                               | Internal Guides                                                                                                             |
-|---------------|:--------------------------------------------------------:|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| **Node**      | [`24.16`](https://nodejs.org/en/about/previous-releases) | JavaScript runtime & build tooling      | [Docs](https://nodejs.org/docs/latest-v24.x/api/documentation.html) - [Learn](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs) - [Manage Version <sup>**(NVM)**</sup>](https://www.nvmnode.com/guide/usage.html) | [NVM](docs/js-foundation/environment/node-core/nvm.md)                                                                      |
-| **PNPM**      |       [`11.3`](https://www.npmjs.com/package/pnpm)       | Fast, disk-efficient package management | [Docs](https://pnpm.io/motivation) - [CLI](https://pnpm.io/cli/add) - [Manage Version <sup>**(Corepack)**</sup>](https://github.com/nodejs/corepack#usage)                                                                          | [PNPM](docs/js-foundation/environment/node-core/pnpm.md) - [Corepack](docs/js-foundation/environment/node-core/corepack.md) |
+| Specification  |                         Version                          | Description                             | Links                                                                                                                                                                                                                               | Internal Guides                                                                                                             |
+|----------------|:--------------------------------------------------------:|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| **Node**       | [`24.16`](https://nodejs.org/en/about/previous-releases) | JavaScript runtime & build tooling      | [Docs](https://nodejs.org/docs/latest-v24.x/api/documentation.html) - [Learn](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs) - [Manage Version <sup>**(NVM)**</sup>](https://www.nvmnode.com/guide/usage.html) | [NVM](docs/js-foundation/environment/node-core/nvm.md)                                                                      |
+| **PNPM**       |       [`11.3`](https://www.npmjs.com/package/pnpm)       | Fast, disk-efficient package management | [Docs](https://pnpm.io/motivation) - [CLI](https://pnpm.io/cli/add) - [Manage Version <sup>**(Corepack)**</sup>](https://github.com/nodejs/corepack#usage)                                                                          | [PNPM](docs/js-foundation/environment/node-core/pnpm.md) - [Corepack](docs/js-foundation/environment/node-core/corepack.md) |
+| **Typescript** |    [`^6.0`](https://www.npmjs.com/package/typescript)    | Type safety & enhanced IDE intellisense | [Docs](https://www.typescriptlang.org/docs/) - [Util Types](https://www.typescriptlang.org/docs/handbook/utility-types.html) - [Cheat Sheet](https://www.typescriptlang.org/cheatsheets/)                                           | [TSC](docs/js-foundation/environment/compilers/tsc.md)                                                                      |
 
 
 ### 🚀 Application
@@ -92,7 +93,7 @@ You can also verify the development environment by running:
 
 ```shell
 # Confirm no TypeScript or type-related issues
-tsc --noEmit
+pnpm typecheck
 # - ✅ Expected: (no error shown) -
 ```
 
@@ -109,3 +110,4 @@ Scripts used during development to run the application, maintain code quality, a
 |------------------|---------------------------------------------------|
 | `pnpm start`     | Start app in **DEV mode**                         |
 | `pnpm build`     | Compile **TypeScript** source into **JavaScript** |
+| `pnpm typecheck` | Validate **TypeScript** types                     |

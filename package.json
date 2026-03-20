@@ -2,7 +2,8 @@
   "name": "km-express-template",
   "version": "1.0.0-environment",
   "scripts": {
-    "start": "node src/server",
+    "start": "pnpm run build && node dist/server",
+    "typecheck": "tsc --noEmit",
     "build": "tsc"
   },
   "packageManager": "pnpm@11.3.0",
@@ -14,8 +15,9 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
+    "@tsconfig/node24": "^24.0.4",
     "@types/node": "^25.9.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "author": "KM",
   "license": "MIT"
