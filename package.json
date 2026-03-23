@@ -2,15 +2,21 @@
   "name": "km-express-template",
   "version": "1.0.0-environment",
   "scripts": {
-    "start": "pnpm run build && node dist/server",
+    "_env": "dotenv -c ${ENV=\"development\"}",
+    "start": "pnpm run _env -- pnpm run build && node dist/server",
     "typecheck": "tsc --noEmit",
-    "build": "tsc"
+    "build": "tsc",
+    "prerun": "pnpm install --frozen-lockfile && rm -rf dist && pnpm run build",
+    "server": "pnpm run _env -- node dist/server",
+    "server:prod": "ENV=production pnpm run server",
+    "server:stage": "ENV=staging pnpm run server"
   },
   "packageManager": "pnpm@11.3.0",
   "engines": {
     "node": ">=24.16.0"
   },
   "dependencies": {
+    "dotenv-cli": "^11.0.0",
     "express": "^5.2.1"
   },
   "devDependencies": {

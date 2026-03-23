@@ -1,6 +1,6 @@
 # 🌳 Environment Setup Guides
 
-<p align="right"><em>&lt;Last updated: 2026-03-20&gt;</em></p>
+<p align="right"><em>&lt;Last updated: 2026-03-23&gt;</em></p>
 
 A **well-configured JavaScript/TypeScript project** depends on aligned runtime versions, consistent compiler behavior,
 and predictable environment loading. This guide walks through the **step-by-step setup of a Node.js project from
@@ -22,6 +22,8 @@ setup** for real-world applications.
      ├─ Runtime Versions        → Lock Node & package manager
      │
      ├─ TypeScript Environment  → Configure compiler & module resolution
+     │
+     ├─ JavaScript Environment  → Load .env, absolute imports, dev ergonomics
      │
      ▼
 <Ready-to-Run>
@@ -66,6 +68,23 @@ and output structure with the target runtime or framework.
   - Choosing the right preset for the **target runtime** (Node.js, Bun, Deno, etc.).
   - Sharing compiler options across packages via **local config inheritance**.
   - Structuring `tsconfig.json` for consistent compilation and module resolution.
+
+  </dd>
+  <dt>
+
+### 🌳 [Setup Environment in JavaScript Application](javascript-environment.md)
+
+  </dt>
+  <dd>
+
+Configure the **runtime environment** of a JavaScript/TypeScript application — including environment variable
+loading, absolute imports, and developer-experience settings.
+
+**Covers:**
+  - Organizing `.env` files with the **dotenv-flow** layering convention.
+  - Loading environment variables into scripts via **dotenv-cli**.
+  - Configuring **absolute imports** using `baseUrl` / `NODE_PATH` or `tsconfig-paths` + `tsc-alias`.
+  - Suppressing non-fatal errors to keep the development loop uninterrupted.
 
   </dd>
 </dl>

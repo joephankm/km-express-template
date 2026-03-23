@@ -106,8 +106,32 @@ pnpm typecheck
 
 Scripts used during development to run the application, maintain code quality, and perform local tasks.
 
-| Script           | Purpose                                           |
-|------------------|---------------------------------------------------|
-| `pnpm start`     | Start app in **DEV mode**                         |
-| `pnpm build`     | Compile **TypeScript** source into **JavaScript** |
-| `pnpm typecheck` | Validate **TypeScript** types                     |
+| Script           | Purpose                       | Multi-env |
+|------------------|-------------------------------|:---------:|
+| `pnpm start`     | Start app in **DEV mode**     |     ✓     |
+| `pnpm typecheck` | Validate **TypeScript** types |           |
+
+
+### 🚀 Deployment
+
+Scripts used to run the application in server environments and execute deployment-related tasks.
+
+| Script              | Purpose                                                                                               | Multi-env |
+|---------------------|-------------------------------------------------------------------------------------------------------|:---------:|
+| `pnpm build`        | Compile **TypeScript** source into **JavaScript**                                                     |           |
+| `pnpm prerun`       | Prepare application for deployment: <ol> <li>Install dependencies</li> <li>Build artifacts</li> </ol> |           |
+| `pnpm server`       | Run app in **PRODUCTION mode**                                                                        |     ✓     |
+| `pnpm server:<env>` | Run app in a specific environment                                                                     |           |
+
+
+### 🌍 Environments
+
+Scripts that include `<env>` in their name (e.g., `server:<env>`) run in a specific environment.
+
+The following environments are supported by this project:
+
+| Environment | `<env>` in Script | Runtime Env   | `.env` file                            | 📗 Example     |
+|-------------|-------------------|---------------|----------------------------------------|----------------|
+| Development | _                 | `development` | [`.env.development`](.env.development) | `server`       |
+| Staging     | `stage`           | `staging`     | [`.env.staging`](.env.staging)         | `server:prod`  |
+| Production  | `prod`            | `production`  | [`.env.production`](.env.production)   | `server:stage` |

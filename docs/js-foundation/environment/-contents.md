@@ -30,6 +30,17 @@ Overview: 🏗️ [_Compilers & Build Tools_](compilers/-intro.md)
 ------------
 
 
+## 🧰 Environment Tools
+
+Runtime and environment utilities that support development and execution of TypeScript applications.
+
+Overview: 🧰 [_Environment Tools_](tools/-intro.md)
+
+- ![Dotenv CLI](_static/icons/dotenv-14.png) [Dotenv CLI — Load `.env` files from the command line](tools/dotenv-cli.md)
+
+------------
+
+
 ## 🛠️ Setup
 
 Step-by-step guides for configuring the full development environment from scratch.
@@ -38,6 +49,7 @@ Overview: 🌳 [_Environment Setup Guides_](setup/-intro.md)
 
 - 🧭 [Manage Node Runtime & Package Manager Versions](setup/node-package-manager-version.md)
 - ![TypeScript](_static/icons/typescript-14.png) [Configure TypeScript Environment](setup/typescript-environment.md)
+- 🌳 [Setup Environment in JavaScript Application](setup/javascript-environment.md)
 
 ------------
 

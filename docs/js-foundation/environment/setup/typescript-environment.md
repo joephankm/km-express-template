@@ -16,7 +16,8 @@ transformed**, how **modules are resolved**, and how **output is prepared** for 
 ************
 
 [⤴️ Back: **Node Environment**](-intro.md)\
-[◀️ Previous: **Manage Node & Package Manager Versions**](node-package-manager-version.md)
+[◀️ Previous: **Manage Node & Package Manager Versions**](node-package-manager-version.md)                                          \
+                                             [Next: **Setup Environment in JavaScript Application** ▶️](typescript-environment.md)
 
 ************
 
@@ -150,4 +151,5 @@ Local config inheritance helps:
 ************
 
 [⤴️ Back: **Node Environment**](-intro.md)\
-[◀️ Previous: **Manage Node & Package Manager Versions**](node-package-manager-version.md)
+[◀️ Previous: **Manage Node & Package Manager Versions**](node-package-manager-version.md)                                          \
+                                             [Next: **Setup Environment in JavaScript Application** ▶️](typescript-environment.md)
