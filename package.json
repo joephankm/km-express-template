@@ -5,7 +5,7 @@
     "_env": "dotenv -c ${ENV=\"development\"}",
     "start": "pnpm run _env -- pnpm run build && node dist/server",
     "typecheck": "tsc --noEmit",
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "prerun": "pnpm install --frozen-lockfile && rm -rf dist && pnpm run build",
     "server": "pnpm run _env -- node dist/server",
     "server:prod": "ENV=production pnpm run server",
@@ -23,6 +23,7 @@
     "@types/express": "^5.0.6",
     "@tsconfig/node24": "^24.0.4",
     "@types/node": "^25.9.1",
+    "tsc-alias": "^1.8.16",
     "typescript": "^6.0.3"
   },
   "author": "KM",

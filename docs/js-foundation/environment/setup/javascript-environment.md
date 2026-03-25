@@ -1,9 +1,10 @@
 # 🌳 Setup Environment in JavaScript Application
 
-<p align="right"><em>&lt;Last updated: 2026-03-23&gt;</em></p>
+<p align="right"><em>&lt;Last updated: 2026-03-25&gt;</em></p>
 
 > ### 🗂️ Contents
 >   - 🌍 [Load Environment](#-load-environment-)
+>   - 📦 [Configure Absolute Imports](#-configure-absolute-imports-)
 >   - 🚧 [Ignore Blocking Errors During Development](#-ignore-blocking-errors-during-development-)
 
 ************
@@ -203,6 +204,191 @@ This pattern provides:
   - Flexible environment and client switching.
   - Cleaner and more maintainable script definitions.
   - Predictable runtime behavior across environments.
+
+------------
+
+
+## 📦 Configure Absolute Imports [🔺](#-setup-environment-in-javascript-application)
+
+**Absolute import** is a module import approach that allows files to be referenced from a **fixed base path** instead of
+using **relative paths**.
+
+📗 **Example:**
+
+```js
+// ❌ Relative import
+import { createUser } from '../../../services/userService';
+
+// ✅ Absolute import
+import { createUser } from 'services/userService';
+```
+
+Using absolute imports helps:
+  - Improve **code readability**.
+  - Reduce fragile `../../..` path chains.
+  - Simplify **refactoring and file movement**.
+  - Provide consistent module resolution across the project.
+  - Improve **developer experience (DX)** in large codebases.
+
+### 🛠️ Method 1 — Using `baseUrl` (TypeScript) + `NODE_PATH` (Runtime)
+
+##### ① <u>Configure `baseUrl` in TypeScript Config</u>
+
+In [`tsconfig.json`](../../../../tsconfig.json) file, set `baseUrl` to your source root directory (e.g., `src/`) to
+enable absolute imports during compilation.
+
+```json5
+// (📍 /tsconfig.json)
+
+{
+  "compilerOptions": {
+    "baseUrl": "./src"
+  }
+}
+```
+
+With this configuration, TypeScript resolves non-relative imports from the **source root**.
+
+##### ② <u>Use `NODE_PATH` Environment Variable at Runtime</u>
+
+Node.js does not natively respect TypeScript’s `baseUrl`. To align runtime module resolution, set the `NODE_PATH`
+environment variable in the command.
+
+```json5
+// (📍 /package.json)
+
+{
+  "scripts": {
+    "start": "NODE_PATH=./src node-ts src/server.ts",
+    "server": "NODE_PATH=./dist node dist/server.js"
+  }
+}
+```
+
+This ensures Node can resolve modules from the same base directory as TypeScript.
+
+> ### ⚠️ _NODE_PATH Compatibility_
+>
+> `NODE_PATH` is supported only by **CommonJS module** resolution and does **not work with native ES modules** (e.g.,
+> when `"type": "module"` is set in `package.json`).
+>
+> 👉 _See: [Differences between ES modules and CommonJS](https://nodejs.org/api/esm.html#differences-between-es-modules-and-commonjs)_
+>
+> In many modern Node.js projects, the runtime target may be ESM, but the build output is still **compiled to CommonJS**
+> (e.g. using TypeScript with `"module": "node*"` settings). In such cases, `NODE_PATH` continues to function because
+> the executed artifacts use CommonJS resolution.
+>
+> However, in **pure ESM environments** or projects that rely on **native ESM loaders**, `NODE_PATH` may not work as
+> expected. For these setups, prefer using path aliases resolutions.
+>
+> In some cases, compatibility can be improved by using modern module resolution strategies such as
+> `"moduleResolution": "node16"` or `bundler`, depending on the project tooling and runtime configuration.
+
+
+### 🛠️ Method 2 — Using `tsc-alias` (Runtime) + `tsconfig-paths` (Development)
+
+This approach enables absolute imports by resolving modules relative to the source root directory.
+
+It works by:
+  - Resolving imports during development using `tsconfig-paths`.
+  - Rewriting compiled output using `tsc-alias`.
+
+##### ① <u>Configure TypeScript Source & Output Directories</u>
+
+In [`tsconfig.json`](../../../../tsconfig.json) file, define the source root and build output directories.
+
+```json5
+// (📍 /tsconfig.json)
+
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist"
+  }
+}
+```
+
+This ensures the compiler emits a clean build structure that can be processed by `tsc-alias` and `tsconfig-paths`.
+
+##### ② <u>Resolve Absolute Imports in Development</u>
+
+When executing TypeScript directly (e.g., via `ts-node` or `tsx)`, Node.js does not automatically resolve absolute
+imports based on TypeScript configuration.
+
+Use [**tsconfig-paths**](https://www.npmjs.com/package/tsconfig-paths) to align runtime resolution.
+
+```shell
+pnpm add -D tsconfig-paths
+```
+
+Then use in **dev script**:
+
+```json5
+// (📍 /package.json)
+
+{
+  "scripts": {
+    // -- Run using `ts-node` --
+    "start": "ts-node -r tsconfig-paths/register server.ts",
+
+    // -- Run compiled output directly --
+    "start:node": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register server.js"
+  }
+}
+```
+
+Alternatively, configure it in [`tsconfig.json`](../../../../tsconfig.json):
+
+```json5
+// (📍 /tsconfig.json)
+
+{
+  "compilerOptions": {
+    // ...
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}
+```
+
+##### ③ <u>Rewrite Imports After Build</u>
+
+TypeScript does not transform absolute imports in emitted JavaScript files.
+
+Use [**tsc-alias**](https://www.npmjs.com/package/tsc-alias) to rewrite them to relative paths after compilation.
+
+```shell
+pnpm add -D tsc-alias
+```
+
+Then update **build script**:
+
+```json5
+// (📍 /package.json)
+
+{
+  "scripts": {
+    "build": "tsc && tsc-alias"
+  }
+}
+```
+
+Alternatively, configure it in [`tsconfig.json`](../../../../tsconfig.json):
+
+```json5
+// (📍 /tsconfig.json)
+
+{
+  "compilerOptions": {
+    // ...
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "verbose": false
+  },
+}
+```
 
 ------------
 

@@ -1,4 +1,4 @@
-// ⚙️ Configuration for TypeScript Compiler (Node.js app). <Last updated: 2026-03-20>
+// ⚙️ Configuration for TypeScript Compiler (Node.js app). <Last updated: 2026-03-25>
 // Docs: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html  -- TS Compiler Configuration
 // Docs: https://www.typescriptlang.org/tsconfig/                         -- TS Compiler Options
 // Repo: https://github.com/tsconfig/bases/                               -- Centralized Recommendations for TSConfig bases
@@ -12,8 +12,9 @@
     // "rootDirs": [],                         /* Allow multiple folders to be treated as one when resolving modules. */
 
     /* ════════════════════ Import Paths ════════════════════ */
-    // "baseUrl": "./",                        /* Specify the base directory to resolve non-relative module names. */
-    // "paths": {},                            /* Specify a set of entries that re-map imports to additional lookup locations. */
+    "paths": {                                  /* Specify a set of entries that re-map imports to additional lookup locations. */
+      "#*": ["./src/*"]
+    },
 
     /* ════════════════════ Other Outputs ═══════════════════ */
     // "declaration": true,                    /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
@@ -41,5 +42,11 @@
     "allowJs": true                            /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
     // "checkJs": true,                        /* Enable error reporting in type-checked JavaScript files. */
   },
-  "include": ["src"]
+  "include": ["src"],
+
+  /* --- TSC Alias: Replace alias paths with relative paths after typescript compilation --- */
+  "tsc-alias": {                               /* -- Options: https://github.com/justkey007/tsc-alias?tab=readme-ov-file#usage -- */
+    "resolveFullPaths": true,                  /* Attempt to replace incomplete import paths (those not ending in .js) with fully resolved paths (for ESM compatibility) */
+    "verbose": true                            /* Additional information is output to the terminal */
+  }
 }
