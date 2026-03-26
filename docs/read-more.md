@@ -19,3 +19,4 @@ Guides for using development tools and managing project tooling effectively:
 
 1. Setup **Node Environment Foundation** — 🧱 _Follow the [Node Environment Foundation](js-foundation/environment/node-core/-intro.md)._
 2. Explore **Compilers & Build Tools** — 🏗️ _Browse the [Compilers & Build Tools](js-foundation/environment/compilers/-intro.md) reference._
+3. Explore **Server Runtime** — ⚡️ _Browse the [Server Runtime](js-foundation/server/runtime/-intro.md) reference._

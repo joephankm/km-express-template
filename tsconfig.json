@@ -1,4 +1,4 @@
-// ⚙️ Configuration for TypeScript Compiler (Node.js app). <Last updated: 2026-03-25>
+// ⚙️ Configuration for TypeScript Compiler (Node.js app). <Last updated: 2026-03-26>
 // Docs: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html  -- TS Compiler Configuration
 // Docs: https://www.typescriptlang.org/tsconfig/                         -- TS Compiler Options
 // Repo: https://github.com/tsconfig/bases/                               -- Centralized Recommendations for TSConfig bases
@@ -48,5 +48,10 @@
   "tsc-alias": {                               /* -- Options: https://github.com/justkey007/tsc-alias?tab=readme-ov-file#usage -- */
     "resolveFullPaths": true,                  /* Attempt to replace incomplete import paths (those not ending in .js) with fully resolved paths (for ESM compatibility) */
     "verbose": true                            /* Additional information is output to the terminal */
+  },
+
+  /* --- TS Node: TypeScript execution runtime --- */
+  "ts-node": {                                 /* -- Options: https://typestrong.org/ts-node/docs/options -- */
+    "require": ["tsconfig-paths/register"]      /* Ensure path aliases (e.g., "#/...") work in ts-node. */
   }
 }

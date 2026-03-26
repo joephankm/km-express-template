@@ -37,6 +37,15 @@ List of the **core libraries and frameworks** used within the application to imp
 |-------------|:-----------------------------------------------:|-----------------------------------------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
 | **Express** | [`^5.2`](https://www.npmjs.com/package/express) | Core web framework for HTTP APIs and services | [Docs](https://expressjs.com/en/starter/installing.html) - [API](https://expressjs.com/en/5x/api.html) | [Setup Express App](docs/backend/express/setup/express-app.md) |
 
+
+### 🧰 Utilities
+
+**Tools and utility libraries** that support project development and functionality.
+
+| Package     |                     Version                      |   Type    | Description                                  | Links                                                                                                 | Internal Guides                                         |
+|-------------|:------------------------------------------------:|:---------:|----------------------------------------------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| **TS-Node** | [`^10.9`](https://www.npmjs.com/package/ts-node) | _Runtime_ | Execute TypeScript files directly in Node.js | [Docs](https://typestrong.org/ts-node/docs/) - [Options](https://typestrong.org/ts-node/docs/options) | [TS-Node](docs/js-foundation/server/runtime/ts-node.md) |
+
 ------------
 
 
@@ -106,10 +115,11 @@ pnpm typecheck
 
 Scripts used during development to run the application, maintain code quality, and perform local tasks.
 
-| Script           | Purpose                       | Multi-env |
-|------------------|-------------------------------|:---------:|
-| `pnpm start`     | Start app in **DEV mode**     |     ✓     |
-| `pnpm typecheck` | Validate **TypeScript** types |           |
+| Script                     | Purpose                                                  | Multi-env |
+|----------------------------|----------------------------------------------------------|:---------:|
+| `pnpm start`               | Start app in **DEV mode**                                |     ✓     |
+| `pnpm script <file>`       | Run a TypeScript script from [`scripts/<file>`](scripts) |     ✓     |
+| `pnpm typecheck`           | Validate **TypeScript** types                            |           |
 
 
 ### 🚀 Deployment

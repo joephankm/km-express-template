@@ -1,0 +1,7 @@
+// ⚙️ TypeScript configuration for standalone scripts.
+// Enables TypeScript support for `scripts/` while keeping them outside the main build output.
+
+{
+  "extends": "../tsconfig.json",  /* Extend from the root project TSConfig. */
+  "include": ["../src", "../scripts"],
+}

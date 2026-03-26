@@ -1,9 +1,11 @@
 {
   "name": "km-express-template",
-  "version": "1.0.0-environment",
+  "version": "1.1.0-runtime",
   "scripts": {
     "_env": "dotenv -c ${ENV=\"development\"}",
-    "start": "pnpm run _env -- pnpm run build && node dist/server",
+    "start": "pnpm run _env -- ts-node src/server",
+    "script": "pnpm run _env -- ts-node --transpile-only --cwd scripts",
+    "hello:script": "pnpm run script hello",
     "typecheck": "tsc --noEmit",
     "build": "tsc && tsc-alias",
     "prerun": "pnpm install --frozen-lockfile && rm -rf dist && pnpm run build",
@@ -20,10 +22,12 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.6",
     "@tsconfig/node24": "^24.0.4",
+    "@types/express": "^5.0.6",
     "@types/node": "^25.9.1",
-    "tsc-alias": "^1.8.16",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.17",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^6.0.3"
   },
   "author": "KM",
