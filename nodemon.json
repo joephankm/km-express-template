@@ -1,0 +1,10 @@
+{
+  "_lastUpdated": "2026-03-27",
+  "watch": ["src/**/*"],
+  "ext": "ts,json",
+  "ignore": ["*.test.ts"],
+  "execMap": {
+    "ts": "ts-node",
+    "js": "node"
+  }
+}

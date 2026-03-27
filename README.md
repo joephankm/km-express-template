@@ -42,9 +42,10 @@ List of the **core libraries and frameworks** used within the application to imp
 
 **Tools and utility libraries** that support project development and functionality.
 
-| Package     |                     Version                      |   Type    | Description                                  | Links                                                                                                 | Internal Guides                                         |
-|-------------|:------------------------------------------------:|:---------:|----------------------------------------------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
-| **TS-Node** | [`^10.9`](https://www.npmjs.com/package/ts-node) | _Runtime_ | Execute TypeScript files directly in Node.js | [Docs](https://typestrong.org/ts-node/docs/) - [Options](https://typestrong.org/ts-node/docs/options) | [TS-Node](docs/js-foundation/server/runtime/ts-node.md) |
+| Package     |                     Version                      |   Type    | Description                                  | Links                                                                                                    | Internal Guides                                         |
+|-------------|:------------------------------------------------:|:---------:|----------------------------------------------|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| **TS-Node** | [`^10.9`](https://www.npmjs.com/package/ts-node) | _Runtime_ | Execute TypeScript files directly in Node.js | [Docs](https://typestrong.org/ts-node/docs/) - [Options](https://typestrong.org/ts-node/docs/options)    | [TS-Node](docs/js-foundation/server/runtime/ts-node.md) |
+| **Nodemon** | [`^3.1`](https://www.npmjs.com/package/nodemon)  | _Runtime_ | Auto-restart server on file changes          | [Docs](https://github.com/remy/nodemon#nodemon) - [Config](https://github.com/remy/nodemon#config-files) | [Nodemon](docs/js-foundation/server/runtime/nodemon.md) |
 
 ------------
 

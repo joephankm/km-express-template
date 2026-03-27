@@ -1,6 +1,6 @@
 # ⚡️ Server Runtime
 
-<p align="right"><em>&lt;Last updated: 2026-03-26&gt;</em></p>
+<p align="right"><em>&lt;Last updated: 2026-03-27&gt;</em></p>
 
 Running a Node.js server involves different execution strategies depending on the environment. **Development** demands
 fast feedback — automatic restarts on file changes and direct TypeScript execution without a build step. **Production**
@@ -27,6 +27,9 @@ environments.
         │                       │
      ts-node                   TSC
 (execute directly)       (compile first)
+        │
+     nodemon
+(watch & restart)
 ```
 
 Choosing the right execution strategy for each environment keeps development fast and production stable.
@@ -52,6 +55,23 @@ separate compile step during development.
   - Execute one-off scripts and utilities in TypeScript.
   - Pair with `nodemon` for a hot-reload TypeScript development server.
   - Prototype and test TypeScript code quickly in the REPL.
+
+  </dd>
+  <dt>
+
+### ![nodemon](../_static/icons/nodemon-16.png) [Nodemon](nodemon.md)
+
+  </dt>
+  <dd>
+
+A development utility that monitors source files for changes and automatically restarts the Node.js process — providing
+a tight feedback loop without manual restarts.
+
+**Use Cases:**
+  - Auto-restart the server on any source file change during development.
+  - Watch specific file extensions (`.ts`, `.json`, `.env`) for targeted restarts.
+  - Pair with `ts-node` for a zero-build TypeScript development server.
+  - Configure restart delay and ignore patterns for noisy directories.
 
   </dd>
 </dl>

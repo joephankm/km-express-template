@@ -20,7 +20,8 @@ workflows, scripting, and tooling** where on-the-fly compilation is preferred ov
 
 ************
 
-[⤴️ Back: **Node Runtimes**](-intro.md)
+[⤴️ Back: **Node Runtimes**](-intro.md)\
+                                                          [Next: **Nodemon** ▶️](nodemon.md)
 
 ************
 
@@ -234,4 +235,5 @@ configuration.
 
 ************
 
-[⤴️ Back: **Node Runtimes**](-intro.md)
+[⤴️ Back: **Node Runtimes**](-intro.md)\
+                                                          [Next: **Nodemon** ▶️](nodemon.md)
