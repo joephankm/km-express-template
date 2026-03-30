@@ -20,7 +20,7 @@ significantly improving the development workflow.
 ************
 
 [⤴️ Back: **Node Runtimes**](-intro.md)\
-[◀️ Previous: **TS-Node**](ts-node.md)
+[◀️ Previous: **TS-Node**](ts-node.md)                                          [Next: **PM2** ▶️](pm2.md)
 
 ************
 
@@ -283,4 +283,4 @@ Common CLI options supported across `nodemon` commands:
 ************
 
 [⤴️ Back: **Node Runtimes**](-intro.md)\
-[◀️ Previous: **TS-Node**](ts-node.md)
+[◀️ Previous: **TS-Node**](ts-node.md)                                          [Next: **PM2** ▶️](pm2.md)

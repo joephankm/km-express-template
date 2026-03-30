@@ -1,6 +1,6 @@
 # ⚡️ Server Runtime
 
-<p align="right"><em>&lt;Last updated: 2026-03-27&gt;</em></p>
+<p align="right"><em>&lt;Last updated: 2026-03-30&gt;</em></p>
 
 Running a Node.js server involves different execution strategies depending on the environment. **Development** demands
 fast feedback — automatic restarts on file changes and direct TypeScript execution without a build step. **Production**
@@ -27,9 +27,9 @@ environments.
         │                       │
      ts-node                   TSC
 (execute directly)       (compile first)
-        │
-     nodemon
-(watch & restart)
+        │                       │
+     nodemon                   PM2
+(watch & restart)       (manage process)
 ```
 
 Choosing the right execution strategy for each environment keeps development fast and production stable.
@@ -72,6 +72,31 @@ a tight feedback loop without manual restarts.
   - Watch specific file extensions (`.ts`, `.json`, `.env`) for targeted restarts.
   - Pair with `ts-node` for a zero-build TypeScript development server.
   - Configure restart delay and ignore patterns for noisy directories.
+
+  </dd>
+</dl>
+
+------------
+
+
+## 🚀 Production Execution
+
+<dl>
+  <dt>
+
+### ![PM2](../_static/icons/pm2-16.png) [PM2](pm2.md)
+
+  </dt>
+  <dd>
+
+A production-grade process manager for Node.js applications. Keeps processes alive after crashes, manages logs,
+enables clustering across CPU cores, and integrates with system startup services.
+
+**Use Cases:**
+  - Keep the server running after crashes with automatic restart.
+  - Scale across multiple CPU cores using cluster mode.
+  - Manage application lifecycle (start, stop, reload, delete) via CLI.
+  - Tail and persist logs across process restarts.
 
   </dd>
 </dl>
