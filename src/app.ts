@@ -2,8 +2,12 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 
+// CORE
+import { httpLogging } from '#logging';
+
 // CONSTANTS
 import env from '#configs/env';
+import loggerConfig from '#configs/loggerConfig';
 
 export const createApp = () => {
   const app = express();
@@ -24,8 +28,19 @@ export const createApp = () => {
   // Parse URL-encoded body (Form Data)
   app.use(express.urlencoded({ extended: true }));
 
+  /* ═══════════════════════ Logging ══════════════════════ */
+  // Log incoming HTTP requests
+
+  if (loggerConfig.http.detail !== 'none') {
+    app.use(httpLogging());
+  }
+
   app.get('/', (req, res) => {
     res.send('Hello World!');
+  });
+
+  app.get('/error', (req, res, next) => {
+    next(new Error('Error Testing'));
   });
 
   return app;
