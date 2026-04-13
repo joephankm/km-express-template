@@ -5,6 +5,13 @@ import helmet from 'helmet';
 // CORE
 import { httpLogging } from '#logging';
 
+// MIDDLEWARES
+import errorHandler from '#middlewares/errorHandler';
+import notFound from '#middlewares/notFound';
+
+// ERRORS
+import { BadRequestError } from '#errors';
+
 // CONSTANTS
 import env from '#configs/env';
 import loggerConfig from '#configs/loggerConfig';
@@ -39,9 +46,13 @@ export const createApp = () => {
     res.send('Hello World!');
   });
 
-  app.get('/error', (req, res, next) => {
-    next(new Error('Error Testing'));
+  app.get('/error', (_req, _res) => {
+    throw new BadRequestError('Error Testing');
   });
+
+  app.use(notFound());
+
+  app.use(errorHandler());
 
   return app;
 };

@@ -6,6 +6,9 @@ import pinoHttp from 'pino-http';
 // CORE
 import { createLogger } from './logger';
 
+// ERRORS
+import { type IServerAppError } from '#errors';
+
 // CONSTANTS
 import config from '#configs/loggerConfig';
 import type { LogDetail } from './constants/loggingTypes';
@@ -60,8 +63,6 @@ export default () => {
     }
   );
 
-  const INVALID_STATUES = [400, 401, 404, 422];
-
   return pinoHttp({
     logger: httpLogger,
 
@@ -70,10 +71,21 @@ export default () => {
     wrapSerializers: false,
 
     // Define a custom logger level
-    customLogLevel: (_req, { statusCode }): HttpLogLevel => {
+    customLogLevel: (_req, { statusCode }, err?: Error | IServerAppError): HttpLogLevel => {
       if (statusCode < 400) return 'success';
-      if (statusCode < 500) return INVALID_STATUES.includes(statusCode) ? 'invalid' : 'failed';
-      return 'critical';
+      if (err && 'errorLevel' in err) {
+        /* eslint-disable @typescript-eslint/no-unsafe-enum-comparison */
+        switch (err.errorLevel) {
+          case 'validation':
+            return 'invalid';
+          case 'rejected':
+            return 'failed';
+          default:
+            return 'critical';
+        }
+        /* eslint-enable @typescript-eslint/no-unsafe-enum-comparison */
+      }
+      return statusCode === 404 ? 'invalid' : 'critical';
     },
   });
 };
@@ -85,6 +97,7 @@ export default () => {
 type HttpSerializers = {
   req: (req: Request) => Partial<RequestObj>;
   res: (res: Response) => Partial<ResponseObj>;
+  err?: (err: Error) => Record<string, unknown>;
 };
 
 function httpSerializersFactory(logDetail: LogDetail): HttpSerializers {
@@ -100,6 +113,10 @@ function httpSerializersFactory(logDetail: LogDetail): HttpSerializers {
     return {
       req: baseReqSerializer,
       res: baseResSerializer,
+      // err: err => {
+      //   console.log('err', err);
+      //   return err;
+      // },
     };
   }
 
