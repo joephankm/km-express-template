@@ -9,8 +9,8 @@ import { httpLogging } from '#logging';
 import errorHandler from '#middlewares/errorHandler';
 import notFound from '#middlewares/notFound';
 
-// ERRORS
-import { BadRequestError } from '#errors';
+// ROUTES
+import routes from '#routes';
 
 // CONSTANTS
 import env from '#configs/env';
@@ -42,13 +42,8 @@ export const createApp = () => {
     app.use(httpLogging());
   }
 
-  app.get('/', (req, res) => {
-    res.send('Hello World!');
-  });
-
-  app.get('/error', (_req, _res) => {
-    throw new BadRequestError('Error Testing');
-  });
+  /* ════════════════════════ Routes ══════════════════════ */
+  app.use('/api', routes);
 
   app.use(notFound());
 
