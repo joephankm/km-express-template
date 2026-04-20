@@ -1,7 +1,4 @@
 import { publicRouter as router } from './routers';
+import * as user from '#controllers/userController';
 
-router.get('/users/:id', (req, res) => {
-  // GET /public/users/:id
-
-  res.send({ status: 'OK', data: { id: req.params.id } });
-});
+router.get('/users/:id', user.getPublicUser); // GET /public/users/:id

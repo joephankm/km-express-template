@@ -1,33 +1,14 @@
-import os from 'os';
-import process from 'process';
+import env from '#configs/env';
 
 // ERRORS
 import { BadRequestError } from '#errors';
 
-// CONSTANTS
-import env from '#configs/env';
-
 import { router } from './routers';
+import * as system from '#controllers/systemController';
 
 router
-  .get('/', (_req, res) => {
-    // GET /
-
-    res.send({ status: 'OK', message: `Server is running on "${env.APP_ENV.toUpperCase()}"` });
-  })
-  .get('/info', (_req, res) => {
-    // GET /info
-
-    res.send({
-      status: 'OK',
-      data: {
-        env: env.APP_ENV,
-        node: process.version,
-        platform: os.platform(),
-        uptime: Math.floor(process.uptime()),
-      },
-    });
-  });
+  .get('/', system.getStatus) // GET /
+  .get('/info', system.getInfo); // GET /info
 
 if (env.NODE_ENV === 'development') {
   router

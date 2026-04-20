@@ -1,22 +1,23 @@
 import { Router } from 'express';
-import { notImplementedRequest } from '#helpers/requestHandlers';
 
 import { router } from './routers';
+import * as auth from '#controllers/authController';
+import * as authMe from '#controllers/authMeController';
 
 const authRoutes = Router();
 router.use('/auth', authRoutes);
 
 authRoutes
-  .post('/register', notImplementedRequest) // POST /auth/register
-  .post('/login', notImplementedRequest) // POST /auth/login
-  .post('/logout', notImplementedRequest) // POST /auth/logout
-  .post('/refresh', notImplementedRequest); // POST /auth/refresh
+  .post('/register', auth.register) // POST /auth/register
+  .post('/login', auth.login) // POST /auth/login
+  .post('/logout', auth.logout) // POST /auth/logout
+  .post('/refresh', auth.refresh); // POST /auth/refresh
 
 const meRoutes = Router();
 router.use('/me', meRoutes);
 
 meRoutes
-  .get('/', notImplementedRequest) // GET /me
-  .patch('/', notImplementedRequest) // PATCH /me
-  .post('/change-password', notImplementedRequest) // PATCH /me/change-password
-  .delete('/', notImplementedRequest); // DELETE /me
+  .get('/', authMe.getMe) // GET /auth/me
+  .patch('/', authMe.updateMe) // PATCH /auth/me
+  .post('/change-password', authMe.changePassword) // PATCH /auth/me/password
+  .delete('/', authMe.deleteMe); // DELETE /auth/me

@@ -1,193 +1,66 @@
 import { Router } from 'express';
+
 import { privateRouter as router } from './routers';
+import * as user from '#controllers/userController';
+import * as general from '#controllers/generalController';
+import * as item from '#controllers/itemController';
 
 const userRoutes = Router();
 router.use('/users', userRoutes);
 
 userRoutes
-  .get('/', (_req, res) => {
-    // GET /users
-
-    res.send({ status: 'OK', data: [] });
-  })
-  .get('/:id', (req, res) => {
-    // GET /users/:id
-
-    res.send({ status: 'OK', data: { id: req.params.id } });
-  })
-  .post('/', (req, res) => {
-    // POST /users
-
-    res.status(201).send({ status: 'OK', data: req.body as Record<string, unknown> });
-  })
-  .patch('/:id', (req, res) => {
-    // PATCH /users/:id
-
-    const body = req.body as Record<string, unknown>;
-    res.send({ status: 'OK', data: { id: req.params.id, ...body } });
-  })
-  .delete('/:id', (req, res) => {
-    // DELETE /users/:id
-
-    res.send({ status: 'OK', data: { id: req.params.id } });
-  });
+  .get('/', user.listUsers) // GET /users
+  .get('/:id', user.getUser) // GET /users/:id
+  .post('/', user.createUser) // POST /users
+  .patch('/:id', user.updateUser) // PATCH /users/:id
+  .delete('/:id', user.deleteUser); // DELETE /users/:id
 
 const roleRoutes = Router();
 router.use('/roles', roleRoutes);
 
 roleRoutes
-  .get('/', (_req, res) => {
-    // GET /roles
-
-    res.send({ status: 'OK', data: [] });
-  })
-  .get('/:id', (req, res) => {
-    // GET /roles/:id
-
-    res.send({ status: 'OK', data: { id: req.params.id } });
-  })
-  .post('/', (req, res) => {
-    // POST /roles
-
-    res.status(201).send({ status: 'OK', data: req.body as Record<string, unknown> });
-  })
-  .patch('/:id', (req, res) => {
-    // PATCH /roles/:id
-
-    const body = req.body as Record<string, unknown>;
-    res.send({ status: 'OK', data: { id: req.params.id, ...body } });
-  })
-  .delete('/:id', (req, res) => {
-    // DELETE /roles/:id
-
-    res.send({ status: 'OK', data: { id: req.params.id } });
-  });
+  .get('/', user.listRoles) // GET /roles
+  .get('/:id', user.getRole) // GET /roles/:id
+  .post('/', user.createRole) // POST /roles
+  .patch('/:id', user.updateRole) // PATCH /roles/:id
+  .delete('/:id', user.deleteRole); // DELETE /roles/:id
 
 const settingRoutes = Router();
 router.use('/settings', settingRoutes);
 
 settingRoutes
-  .get('/', (_req, res) => {
-    // GET /settings
-
-    res.send({ status: 'OK', data: [] });
-  })
-  .get('/:id', (req, res) => {
-    // GET /settings/:id
-
-    res.send({ status: 'OK', data: { id: req.params.id } });
-  })
-  .post('/', (req, res) => {
-    // POST /settings
-
-    res.status(201).send({ status: 'OK', data: req.body as Record<string, unknown> });
-  })
-  .patch('/:id', (req, res) => {
-    // PATCH /settings/:id
-
-    const body = req.body as Record<string, unknown>;
-    res.send({ status: 'OK', data: { id: req.params.id, ...body } });
-  })
-  .delete('/:id', (req, res) => {
-    // DELETE /settings/:id
-
-    res.send({ status: 'OK', data: { id: req.params.id } });
-  });
+  .get('/', general.listSettings) // GET /settings
+  .get('/:id', general.getSetting) // GET /settings/:id
+  .post('/', general.createSetting) // POST /settings
+  .patch('/:id', general.updateSetting) // PATCH /settings/:id
+  .delete('/:id', general.deleteSetting); // DELETE /settings/:id
 
 const categoryRoutes = Router();
 router.use('/categories', categoryRoutes);
 
 categoryRoutes
-  .get('/', (_req, res) => {
-    // GET /categories
-
-    res.send({ status: 'OK', data: [] });
-  })
-  .get('/:id', (req, res) => {
-    // GET /categories/:id
-
-    res.send({ status: 'OK', data: { id: req.params.id } });
-  })
-  .post('/', (req, res) => {
-    // POST /categories
-
-    res.status(201).send({ status: 'OK', data: req.body as Record<string, unknown> });
-  })
-  .patch('/:id', (req, res) => {
-    // PATCH /categories/:id
-
-    const body = req.body as Record<string, unknown>;
-    res.send({ status: 'OK', data: { id: req.params.id, ...body } });
-  })
-  .delete('/:id', (req, res) => {
-    // DELETE /categories/:id
-
-    res.send({ status: 'OK', data: { id: req.params.id } });
-  });
+  .get('/', item.listCategories) // GET /categories
+  .get('/:id', item.getCategory) // GET /categories/:id
+  .post('/', item.createCategory) // POST /categories
+  .patch('/:id', item.updateCategory) // PATCH /categories/:id
+  .delete('/:id', item.deleteCategory); // DELETE /categories/:id
 
 const itemRoutes = Router();
 router.use('/items', itemRoutes);
 
 itemRoutes
-  .get('/', (_req, res) => {
-    // GET /items
-
-    res.send({ status: 'OK', data: [] });
-  })
-  .get('/:id', (req, res) => {
-    // GET /items/:id
-
-    res.send({ status: 'OK', data: { id: req.params.id } });
-  })
-  .post('/', (req, res) => {
-    // POST /items
-
-    res.status(201).send({ status: 'OK', data: req.body as Record<string, unknown> });
-  })
-  .patch('/:id', (req, res) => {
-    // PATCH /items/:id
-
-    const body = req.body as Record<string, unknown>;
-    res.send({ status: 'OK', data: { id: req.params.id, ...body } });
-  })
-  .delete('/:id', (req, res) => {
-    // DELETE /items/:id
-
-    res.send({ status: 'OK', data: { id: req.params.id } });
-  });
+  .get('/', item.listItems) // GET /items
+  .get('/:id', item.getItem) // GET /items/:id
+  .post('/', item.createItem) // POST /items
+  .patch('/:id', item.updateItem) // PATCH /items/:id
+  .delete('/:id', item.deleteItem); // DELETE /items/:id
 
 const childItemRoutes = Router({ mergeParams: true });
 itemRoutes.use('/:itemId/children', childItemRoutes);
 
 childItemRoutes
-  .get('/', (req, res) => {
-    // GET /items/:itemId/children
-
-    const { itemId } = req.params as Record<string, string>;
-    res.send({ status: 'OK', data: { itemId, children: [] } });
-  })
-  .get('/:id', (req, res) => {
-    // GET /items/:itemId/children/:id
-
-    const { itemId, id } = req.params as Record<string, string>;
-    res.send({ status: 'OK', data: { itemId, id } });
-  })
-  .post('/', (req, res) => {
-    // POST /items/:itemId/children
-
-    const { itemId } = req.params as Record<string, string>;
-    res.status(201).send({ status: 'OK', data: { itemId, ...(req.body as Record<string, unknown>) } });
-  })
-  .patch('/:id', (req, res) => {
-    // PATCH /items/:itemId/children/:id
-
-    const { itemId, id } = req.params as Record<string, string>;
-    const body = req.body as Record<string, unknown>;
-    res.send({ status: 'OK', data: { itemId, id, ...body } });
-  })
-  .delete('/:id', (req, res) => {
-    // DELETE /items/:itemId/children/:id
-
-    const { itemId, id } = req.params as Record<string, string>;
-    res.send({ status: 'OK', data: { itemId, id } });
-  });
+  .get('/', item.listChildren) // GET /items/:itemId/children
+  .get('/:id', item.getChild) // GET /items/:itemId/children/:id
+  .post('/', item.createChild) // POST /items/:itemId/children
+  .patch('/:id', item.updateChild) // PATCH /items/:itemId/children/:id
+  .delete('/:id', item.deleteChild); // DELETE /items/:itemId/children/:id
