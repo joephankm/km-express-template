@@ -1,47 +1,66 @@
 import type { RequestHandler } from 'express';
 
-export const listUsers: RequestHandler = (_req, res) => {
-  res.send({ status: 'OK', data: [] });
+import userService from '#services/user/userService';
+import roleService from '#services/user/roleService';
+
+export const listUsers: RequestHandler = async (_req, res) => {
+  const data = await userService.listUsers();
+  res.send({ status: 'OK', data });
 };
 
-export const getUser: RequestHandler = (req, res) => {
-  res.send({ status: 'OK', data: { id: req.params.id } });
+export const getUser: RequestHandler = async (req, res) => {
+  const { id } = req.params as Record<string, string>;
+  const data = await userService.getUser(id);
+  res.send({ status: 'OK', data });
 };
 
-export const createUser: RequestHandler = (req, res) => {
-  res.status(201).send({ status: 'OK', data: req.body as Record<string, unknown> });
+export const createUser: RequestHandler = async (req, res) => {
+  const data = await userService.createUser(req.body as Record<string, unknown>);
+  res.status(201).send({ status: 'OK', data });
 };
 
-export const updateUser: RequestHandler = (req, res) => {
-  const body = req.body as Record<string, unknown>;
-  res.send({ status: 'OK', data: { id: req.params.id, ...body } });
+export const updateUser: RequestHandler = async (req, res) => {
+  const { id } = req.params as Record<string, string>;
+  const data = await userService.updateUser(id, req.body as Record<string, unknown>);
+  res.send({ status: 'OK', data });
 };
 
-export const deleteUser: RequestHandler = (req, res) => {
-  res.send({ status: 'OK', data: { id: req.params.id } });
+export const deleteUser: RequestHandler = async (req, res) => {
+  const { id } = req.params as Record<string, string>;
+  const data = await userService.deleteUser(id);
+  res.send({ status: 'OK', data });
 };
 
-export const getPublicUser: RequestHandler = (req, res) => {
-  res.send({ status: 'OK', data: { id: req.params.id } });
+export const getPublicUser: RequestHandler = async (req, res) => {
+  const { id } = req.params as Record<string, string>;
+  const data = await userService.getPublicUser(id);
+  res.send({ status: 'OK', data });
 };
 
-export const listRoles: RequestHandler = (_req, res) => {
-  res.send({ status: 'OK', data: [] });
+export const listRoles: RequestHandler = async (_req, res) => {
+  const data = await roleService.listRoles();
+  res.send({ status: 'OK', data });
 };
 
-export const getRole: RequestHandler = (req, res) => {
-  res.send({ status: 'OK', data: { id: req.params.id } });
+export const getRole: RequestHandler = async (req, res) => {
+  const { id } = req.params as Record<string, string>;
+  const data = await roleService.getRole(id);
+  res.send({ status: 'OK', data });
 };
 
-export const createRole: RequestHandler = (req, res) => {
-  res.status(201).send({ status: 'OK', data: req.body as Record<string, unknown> });
+export const createRole: RequestHandler = async (req, res) => {
+  const data = await roleService.createRole(req.body as Record<string, unknown>);
+  res.status(201).send({ status: 'OK', data });
 };
 
-export const updateRole: RequestHandler = (req, res) => {
-  const body = req.body as Record<string, unknown>;
-  res.send({ status: 'OK', data: { id: req.params.id, ...body } });
+export const updateRole: RequestHandler = async (req, res) => {
+  const { id } = req.params as Record<string, string>;
+  const data = await roleService.updateRole(id, req.body as Record<string, unknown>);
+  res.send({ status: 'OK', data });
 };
 
-export const deleteRole: RequestHandler = (req, res) => {
-  res.send({ status: 'OK', data: { id: req.params.id } });
+export const deleteRole: RequestHandler = async (req, res) => {
+  const { id } = req.params as Record<string, string>;
+  const data = await roleService.deleteRole(id);
+  res.send({ status: 'OK', data });
 };
