@@ -1,0 +1,5 @@
+[
+  { "id": "1", "key": "theme", "value": "dark" },
+  { "id": "2", "key": "language", "value": "en" },
+  { "id": "3", "key": "timezone", "value": "UTC" }
+]

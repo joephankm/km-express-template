@@ -1,21 +1,23 @@
+import settingDb from '#database/tables/settingTable';
+
 const listSettings = () => {
-  return Promise.resolve([]);
+  return settingDb.getAll();
 };
 
 const getSetting = (id: string) => {
-  return Promise.resolve({ id });
+  return settingDb.getById(id);
 };
 
 const createSetting = (payload: Record<string, unknown>) => {
-  return Promise.resolve(payload);
+  return settingDb.create(payload);
 };
 
 const updateSetting = (id: string, payload: Record<string, unknown>) => {
-  return Promise.resolve({ id, ...payload });
+  return settingDb.update(id, payload);
 };
 
 const deleteSetting = (id: string) => {
-  return Promise.resolve({ id });
+  return settingDb.remove(id);
 };
 
 export default {

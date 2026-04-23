@@ -1,0 +1,6 @@
+[
+  { "id": "1", "name": "Laptop", "categoryId": "1" },
+  { "id": "2", "name": "Smartphone", "categoryId": "1" },
+  { "id": "3", "name": "T-Shirt", "categoryId": "2" },
+  { "id": "4", "name": "Novel", "categoryId": "3" }
+]

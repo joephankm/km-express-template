@@ -1,41 +1,43 @@
+import itemDb from '#database/tables/itemTable';
+
 const listItems = () => {
-  return Promise.resolve([]);
+  return itemDb.getAll();
 };
 
 const getItem = (id: string) => {
-  return Promise.resolve({ id });
+  return itemDb.getById(id);
 };
 
 const createItem = (payload: Record<string, unknown>) => {
-  return Promise.resolve(payload);
+  return itemDb.create(payload);
 };
 
 const updateItem = (id: string, payload: Record<string, unknown>) => {
-  return Promise.resolve({ id, ...payload });
+  return itemDb.update(id, payload);
 };
 
 const deleteItem = (id: string) => {
-  return Promise.resolve({ id });
+  return itemDb.remove(id);
 };
 
 const listChildren = (itemId: string) => {
-  return Promise.resolve({ itemId, children: [] });
+  return itemDb.getAllChildren(itemId);
 };
 
 const getChild = (itemId: string, id: string) => {
-  return Promise.resolve({ itemId, id });
+  return itemDb.getChildById(itemId, id);
 };
 
 const createChild = (itemId: string, payload: Record<string, unknown>) => {
-  return Promise.resolve({ itemId, ...payload });
+  return itemDb.createChild(itemId, payload);
 };
 
 const updateChild = (itemId: string, id: string, payload: Record<string, unknown>) => {
-  return Promise.resolve({ itemId, id, ...payload });
+  return itemDb.updateChild(itemId, id, payload);
 };
 
 const deleteChild = (itemId: string, id: string) => {
-  return Promise.resolve({ itemId, id });
+  return itemDb.removeChild(itemId, id);
 };
 
 export default {

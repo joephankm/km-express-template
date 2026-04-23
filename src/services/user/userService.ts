@@ -1,25 +1,27 @@
+import userDb from '#database/tables/userTable';
+
 const listUsers = () => {
-  return Promise.resolve([]);
+  return userDb.getAll();
 };
 
 const getUser = (id: string) => {
-  return Promise.resolve({ id });
+  return userDb.getById(id);
 };
 
 const createUser = (payload: Record<string, unknown>) => {
-  return Promise.resolve(payload);
+  return userDb.create(payload);
 };
 
 const updateUser = (id: string, payload: Record<string, unknown>) => {
-  return Promise.resolve({ id, ...payload });
+  return userDb.update(id, payload);
 };
 
 const deleteUser = (id: string) => {
-  return Promise.resolve({ id });
+  return userDb.remove(id);
 };
 
 const getPublicUser = (id: string) => {
-  return Promise.resolve({ id });
+  return userDb.getById(id);
 };
 
 export default {

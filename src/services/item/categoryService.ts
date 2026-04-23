@@ -1,21 +1,23 @@
+import categoryDb from '#database/tables/categoryTable';
+
 const listCategories = () => {
-  return Promise.resolve([]);
+  return categoryDb.getAll();
 };
 
 const getCategory = (id: string) => {
-  return Promise.resolve({ id });
+  return categoryDb.getById(id);
 };
 
 const createCategory = (payload: Record<string, unknown>) => {
-  return Promise.resolve(payload);
+  return categoryDb.create(payload);
 };
 
 const updateCategory = (id: string, payload: Record<string, unknown>) => {
-  return Promise.resolve({ id, ...payload });
+  return categoryDb.update(id, payload);
 };
 
 const deleteCategory = (id: string) => {
-  return Promise.resolve({ id });
+  return categoryDb.remove(id);
 };
 
 export default {

@@ -1,21 +1,23 @@
+import roleDb from '#database/tables/roleTable';
+
 const listRoles = () => {
-  return Promise.resolve([]);
+  return roleDb.getAll();
 };
 
 const getRole = (id: string) => {
-  return Promise.resolve({ id });
+  return roleDb.getById(id);
 };
 
 const createRole = (payload: Record<string, unknown>) => {
-  return Promise.resolve(payload);
+  return roleDb.create(payload);
 };
 
 const updateRole = (id: string, payload: Record<string, unknown>) => {
-  return Promise.resolve({ id, ...payload });
+  return roleDb.update(id, payload);
 };
 
 const deleteRole = (id: string) => {
-  return Promise.resolve({ id });
+  return roleDb.remove(id);
 };
 
 export default {
